@@ -14,3 +14,5 @@ INSERT INTO tb_user_role (user_id, role_id) VALUES (2, 2);
 INSERT INTO tb_user_role (user_id, role_id) VALUES (3, 1);
 INSERT INTO tb_user_role (user_id, role_id) VALUES (3, 2);
 INSERT INTO tb_user_role (user_id, role_id) VALUES (3, 3);
+
+INSERT INTO tb_course (name, img_Uri, img_Gray_Uri) VALUES ('Java Bootcamp', 'https://www.tutorialspoint.com/videotutorials/assets/videos/courses/896/images/course_896_image.png', 'https://i.pcmag.com/imagery/articles/00aKX2mKSN9x94d96DSqolA-1..1596625018.jpg');
