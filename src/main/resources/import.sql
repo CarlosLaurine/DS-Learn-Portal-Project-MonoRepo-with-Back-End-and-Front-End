@@ -19,3 +19,8 @@ INSERT INTO tb_course (name, img_Uri, img_Gray_Uri) VALUES ('Java Bootcamp', 'ht
 
 INSERT INTO tb_offer (edition, start_Moment, end_Moment, course_id) VALUES ('1.0.0', TIMESTAMP WITH TIME ZONE '2020-10-15T17:30:00Z', TIMESTAMP WITH TIME ZONE '2021-12-15T12:30:00Z', 1);
 INSERT INTO tb_offer (edition, start_Moment, end_Moment, course_id) VALUES ('1.5.0', TIMESTAMP WITH TIME ZONE '2020-12-15T17:30:00Z', TIMESTAMP WITH TIME ZONE '2022-02-15T12:30:00Z', 1);
+
+INSERT INTO tb_resource (title, description, position, img_Uri, type, offer_id ) VALUES ('Spring Task', 'Core Task of the Course', 1, 'https://img.icons8.com/color/452/spring-logo.png', 1, 1 );
+INSERT INTO tb_resource (title, description, position, img_Uri, type, offer_id ) VALUES ('Forum', 'Q&A with Students and Mentors', 2, 'https://img.icons8.com/color/452/spring-logo.png', 2, 1 );
+INSERT INTO tb_resource (title, description, position, img_Uri, type, offer_id ) VALUES ('Bonus Live Classes', 'Real Time Scheduled Mentorship Events', 3, 'https://img.icons8.com/color/452/spring-logo.png', 0, 1 );
+
