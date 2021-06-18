@@ -24,3 +24,6 @@ INSERT INTO tb_resource (title, description, position, img_Uri, type, offer_id )
 INSERT INTO tb_resource (title, description, position, img_Uri, type, offer_id ) VALUES ('Forum', 'Q&A with Students and Mentors', 2, 'https://img.icons8.com/color/452/spring-logo.png', 2, 1 );
 INSERT INTO tb_resource (title, description, position, img_Uri, type, offer_id ) VALUES ('Bonus Live Classes', 'Real Time Scheduled Mentorship Events', 3, 'https://img.icons8.com/color/452/spring-logo.png', 0, 1 );
 
+INSERT INTO tb_section (title, description, position, img_Uri, resource_id, prerequisite_id) VALUES ('Chapter 1', 'Lets Start our Learning Path!', 1, 'https://img.icons8.com/color/452/spring-logo.png', 1, null);
+INSERT INTO tb_section (title, description, position, img_Uri, resource_id, prerequisite_id) VALUES ('Chapter 2', 'Lets Continue our Learning Path!', 2, 'https://img.icons8.com/color/452/spring-logo.png', 1, 1);
+INSERT INTO tb_section (title, description, position, img_Uri, resource_id, prerequisite_id) VALUES ('Chapter 3', 'Lets Finish our Learning Path!', 3, 'https://img.icons8.com/color/452/spring-logo.png', 1, 2);
