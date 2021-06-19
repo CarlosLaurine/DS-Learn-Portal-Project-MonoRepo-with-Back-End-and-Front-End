@@ -27,3 +27,6 @@ INSERT INTO tb_resource (title, description, position, img_Uri, type, offer_id )
 INSERT INTO tb_section (title, description, position, img_Uri, resource_id, prerequisite_id) VALUES ('Chapter 1', 'Lets Start our Learning Path!', 1, 'https://img.icons8.com/color/452/spring-logo.png', 1, null);
 INSERT INTO tb_section (title, description, position, img_Uri, resource_id, prerequisite_id) VALUES ('Chapter 2', 'Lets Continue our Learning Path!', 2, 'https://img.icons8.com/color/452/spring-logo.png', 1, 1);
 INSERT INTO tb_section (title, description, position, img_Uri, resource_id, prerequisite_id) VALUES ('Chapter 3', 'Lets Finish our Learning Path!', 3, 'https://img.icons8.com/color/452/spring-logo.png', 1, 2);
+
+INSERT INTO tb_enrollment (user_id, offer_id, enroll_Moment, refund_Moment, available, update_Only) VALUES (1, 1, TIMESTAMP WITH TIME ZONE '2020-10-15T17:30:00Z', null, true, false);
+INSERT INTO tb_enrollment (user_id, offer_id, enroll_Moment, refund_Moment, available, update_Only) VALUES (2, 1, TIMESTAMP WITH TIME ZONE '2020-10-15T17:30:00Z', null, true, false);
