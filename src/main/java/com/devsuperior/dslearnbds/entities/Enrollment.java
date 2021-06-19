@@ -13,6 +13,7 @@ import com.devsuperior.dslearnbds.entities.pks.EnrollmentPK;
 @Entity
 @Table(name = "tb_enrollment")
 public class Enrollment implements Serializable {
+
 	private static final long serialVersionUID = 1L;
 
 	@EmbeddedId
