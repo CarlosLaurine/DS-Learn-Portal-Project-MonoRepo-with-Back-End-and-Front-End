@@ -30,3 +30,19 @@ INSERT INTO tb_section (title, description, position, img_Uri, resource_id, prer
 
 INSERT INTO tb_enrollment (user_id, offer_id, enroll_Moment, refund_Moment, available, update_Only) VALUES (1, 1, TIMESTAMP WITH TIME ZONE '2020-10-15T17:30:00Z', null, true, false);
 INSERT INTO tb_enrollment (user_id, offer_id, enroll_Moment, refund_Moment, available, update_Only) VALUES (2, 1, TIMESTAMP WITH TIME ZONE '2020-10-15T17:30:00Z', null, true, false);
+
+
+INSERT INTO tb_lesson (title, position, section_id) VALUES ('Chapter 1 Class 1', 1, 1);
+INSERT INTO tb_content (id, text_Content, video_Uri) VALUES (1, 'Support Material: Google Docs Link', 'https://www.youtube.com/watch?v=sqbqoR-lMf8'); 
+
+INSERT INTO tb_lesson (title, position, section_id) VALUES ('Chapter 1 Class 2', 2, 1);
+INSERT INTO tb_content (id, text_Content, video_Uri) VALUES (2, 'Support Material: Google Docs Link', 'https://www.youtube.com/watch?v=sqbqoR-lMf8'); 
+
+INSERT INTO tb_lesson (title, position, section_id) VALUES ('Chapter 1 Class 3', 3, 1);
+INSERT INTO tb_content (id, text_Content, video_Uri) VALUES (3, 'Support Material: Google Docs Link', 'https://www.youtube.com/watch?v=sqbqoR-lMf8'); 
+
+INSERT INTO tb_lesson (title, position, section_id) VALUES ('Chapter 1 Task', 4, 1);
+INSERT INTO tb_task (id, description, question_Count, approval_Count, weight, due_Date) VALUES (4, 'Implement Security Validations at the Source Code with OAuth', 10, 6, 1.0, TIMESTAMP WITH TIME ZONE '2020-11-25T13:00:00Z');
+
+INSERT INTO tb_lessons_done (lesson_id, user_id, offer_id) VALUES (1, 1, 1);
+INSERT INTO tb_lessons_done (lesson_id, user_id, offer_id) VALUES (2, 1, 1);
