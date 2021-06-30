@@ -24,9 +24,14 @@ public class UserService implements UserDetailsService {
 	@Autowired
 	private UserRepository repository;
 
+	@Autowired
+	private AuthorizationService authorizationService;
+
 	@Transactional(readOnly = true)
 	public UserDTO findById(Long id) {
 
+		authorizationService.validateAdminOrSelfUser(id);
+		
 		Optional<User> obj = repository.findById(id);
 
 		User entity = obj.orElseThrow(() -> new ResourceNotFoundException("Entity Not Found"));
@@ -35,8 +40,8 @@ public class UserService implements UserDetailsService {
 
 		return dto;
 
-	} 
-	
+	}
+
 	@Override
 	public UserDetails loadUserByUsername(String username) throws UsernameNotFoundException {
 
