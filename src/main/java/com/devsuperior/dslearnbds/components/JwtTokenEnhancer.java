@@ -32,7 +32,7 @@ public class JwtTokenEnhancer implements TokenEnhancer {
 		
 		token.setAdditionalInformation(additionalInfo);
 		
-		return token;
+		return accessToken;
 	}
 
 }
