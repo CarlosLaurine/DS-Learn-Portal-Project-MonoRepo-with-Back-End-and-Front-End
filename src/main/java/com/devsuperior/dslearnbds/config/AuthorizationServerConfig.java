@@ -6,6 +6,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.security.authentication.AuthenticationManager;
+import org.springframework.security.core.userdetails.UserDetailsService;
 import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.security.oauth2.config.annotation.configurers.ClientDetailsServiceConfigurer;
 import org.springframework.security.oauth2.config.annotation.web.configuration.AuthorizationServerConfigurerAdapter;
@@ -41,6 +42,9 @@ public class AuthorizationServerConfig extends AuthorizationServerConfigurerAdap
 	@Autowired
 	private JwtTokenEnhancer jwtTokenEnhancer;
 
+	@Autowired
+	private UserDetailsService userDetailsService;
+
 	@Override
 	public void configure(AuthorizationServerSecurityConfigurer security) throws Exception {
 		security.tokenKeyAccess("permitAll()").checkTokenAccess("isAuthenticated()");
@@ -49,7 +53,8 @@ public class AuthorizationServerConfig extends AuthorizationServerConfigurerAdap
 	@Override
 	public void configure(ClientDetailsServiceConfigurer clients) throws Exception {
 		clients.inMemory().withClient(clientId).secret(passwordEncoder.encode(clientSecret)).scopes("read", "write")
-				.authorizedGrantTypes("password").accessTokenValiditySeconds(jwtDuration);
+				.authorizedGrantTypes("password", "refresh_token").accessTokenValiditySeconds(jwtDuration)
+				.refreshTokenValiditySeconds(jwtDuration);
 	}
 
 	@Override
@@ -60,7 +65,7 @@ public class AuthorizationServerConfig extends AuthorizationServerConfigurerAdap
 		chain.setTokenEnhancers(Arrays.asList(accessTokenConverter, jwtTokenEnhancer));
 
 		endpoints.authenticationManager(authenticationManager).tokenStore(tokenStore)
-				.accessTokenConverter(accessTokenConverter).tokenEnhancer(chain);
+				.accessTokenConverter(accessTokenConverter).tokenEnhancer(chain).userDetailsService(userDetailsService);
 
 	}
 
